@@ -1,4 +1,4 @@
-const choices = ["Rock", "Paper", "Scissors"]
+const choices = ["rock", "paper", "scissors"]
 //works!
 function computerPlay() {
     choice = choices[Math.floor(Math.random() * choices.length)];
@@ -9,7 +9,7 @@ function computerPlay() {
 
 
 const computerSelection = computerPlay();
-const playerSelection = "Scissors";
+const playerSelection = prompt("Type choice").toLowerCase();//now case-insensitive 
 console.log(playerSelection);
 console.log(computerSelection);
 
@@ -19,9 +19,9 @@ console.log(computerSelection);
 function playGame(playerSelection, computerSelection) {
     game = playerSelection + computerSelection;
     results = "";
-    if (game == "PaperRock" || game == "ScissorsPaper" || game == "RockScissors") {
+    if (game == "paperrock" || game == "scissorspaper" || game == "rockscissors") {
         results = "Player wins!";
-    } else if (game == "RockPaper" || game === "PaperScissors" || game == "ScissorsRock") {
+    } else if (game == "rockpaper" || game === "paperscissors" || game == "scissorsrock") {
         results = "Player loses!";
     } else {
         results = "Draw!";

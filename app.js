@@ -1,44 +1,33 @@
 const choices = ["Rock", "Paper", "Scissors"]
 //works!
 function computerPlay() {
-    pick = choices[Math.floor(Math.random() * choices.length)];
-    return pick;
+    choice = choices[Math.floor(Math.random() * choices.length)];
+    return choice;
 }
 
 //console.log(computerPlay());
 
 
 const computerSelection = computerPlay();
-const playerSelection = "Scissors"
-//console.log(playerSelection);
+const playerSelection = "Scissors";
+console.log(playerSelection);
+console.log(computerSelection);
 
-function playRound(playerSelection, computerSelection) {
-    switch (playerSelection + computerSelection) {
-        case "PaperRock":
-        case "ScissorsPaper":
-        case "RockScissors":
-            result = ("Player wins");
-            break;
-        case "RockPaper":
-        case "PaperScissors":
-        case "ScissorsRock":
-            result = ("Player lost!");
-            break;
-        case "PaperPaper":
-        case "RockRock":
-        case "ScissorsScissors": 
-            result = ("Draw!");
-            break;
+
+//Switch was wrong expression. Use if/else instead.
+
+function playGame(playerSelection, computerSelection) {
+    game = playerSelection + computerSelection;
+    results = "";
+    if (game == "PaperRock" || game == "ScissorsPaper" || game == "RockScissors") {
+        results = "Player wins!";
+    } else if (game == "RockPaper" || game === "PaperScissors" || game == "ScissorsRock") {
+        results = "Player loses!";
+    } else {
+        results = "Draw!";
     }
-    return result;
-    
+    console.log(results)
 }
 
-playRound(playerSelection, computerSelection);
-console.log(result);
-
-
-
-
-
+playGame(playerSelection, computerSelection);
 

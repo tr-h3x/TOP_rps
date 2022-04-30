@@ -9,25 +9,52 @@ function computerPlay() {
 
 
 const computerSelection = computerPlay();
-const playerSelection = prompt("Type choice").toLowerCase();//now case-insensitive 
+//const playerSelection = prompt("Type choice").toLowerCase();//now case-insensitive 
+const playerSelection = "rock";
 console.log(playerSelection);
 console.log(computerSelection);
 
 
-//Switch was wrong expression. Use if/else instead.
+//Switch was wrong expression. Use if/else instead. 
 
-function playGame(playerSelection, computerSelection) {
-    game = playerSelection + computerSelection;
+function playRound() {
+    match = playerSelection + computerSelection;
     results = "";
-    if (game == "paperrock" || game == "scissorspaper" || game == "rockscissors") {
+    if (match == "paperrock" || match == "scissorspaper" || match == "rockscissors") {
         results = "Player wins!";
-    } else if (game == "rockpaper" || game === "paperscissors" || game == "scissorsrock") {
+    } else if (match == "rockpaper" || match === "paperscissors" || match == "scissorsrock") {
         results = "Player loses!";
     } else {
         results = "Draw!";
     }
-    console.log(results)
+    console.log(results) // change to return after testing finished
 }
 
-playGame(playerSelection, computerSelection);
+//playRound();
+
+function game() {
+    playRound();
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(i));
+    }
+}
+
+console.log(game());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

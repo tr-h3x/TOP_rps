@@ -5,14 +5,8 @@ function computerPlay() {
     return choice;
 }
 
-//console.log(computerPlay());
-
-
 let computerSelection = computerPlay();
 let playerSelection = "rock";
-//console.log(playerSelection);
-//console.log(computerSelection);
-
 
 //Switch was wrong expression. Use if/else instead. 
 
@@ -29,12 +23,11 @@ function playRound(playerSelection, computerSelection) {
     return results;
 }                 
 
-
 //game() finally runs 5 times correctly. Had to pass arguments in playRound() in both functions
 function game() {
    
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("type:").toLowerCase();
+        let playerSelection = prompt('enter "rock", "paper", or "scissors"').toLowerCase();
         const computerSelection = computerPlay();
         console.log(playerSelection);
         console.log(computerSelection);

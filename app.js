@@ -8,16 +8,16 @@ function computerPlay() {
 //console.log(computerPlay());
 
 
-const computerSelection = computerPlay();
+let computerSelection = computerPlay();
 //const playerSelection = prompt("Type choice").toLowerCase();//now case-insensitive 
-const playerSelection = "rock";
-console.log(playerSelection);
-console.log(computerSelection);
+let playerSelection = "rock";
+//console.log(playerSelection);
+//console.log(computerSelection);
 
 
 //Switch was wrong expression. Use if/else instead. 
 
-function playRound() {
+function playRound(playerSelection, computerSelection) {
     match = playerSelection + computerSelection;
     results = "";
     if (match == "paperrock" || match == "scissorspaper" || match == "rockscissors") {
@@ -27,19 +27,29 @@ function playRound() {
     } else {
         results = "Draw!";
     }
-    console.log(results) // change to return after testing finished
-}
+    return results;
+     // change to return after testing finished
+}                 //changed to return but not working as intended
 
 //playRound();
 
+
+
 function game() {
-    playRound();
+   
     for (let i = 0; i < 5; i++) {
-        console.log(playRound(i));
+        let playerSelection = prompt("type:").toLowerCase();
+        const computerSelection = computerPlay();
+        console.log(playerSelection);
+        console.log(computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        
+
+        //console.log(i);
     }
 }
 
-console.log(game());
+game();
 
 
 

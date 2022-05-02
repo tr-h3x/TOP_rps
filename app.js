@@ -1,5 +1,5 @@
 const choices = ["rock", "paper", "scissors"]
-//works!
+
 function computerPlay() {
     choice = choices[Math.floor(Math.random() * choices.length)];
     return choice;
@@ -9,7 +9,6 @@ function computerPlay() {
 
 
 let computerSelection = computerPlay();
-//const playerSelection = prompt("Type choice").toLowerCase();//now case-insensitive 
 let playerSelection = "rock";
 //console.log(playerSelection);
 //console.log(computerSelection);
@@ -20,21 +19,18 @@ let playerSelection = "rock";
 function playRound(playerSelection, computerSelection) {
     match = playerSelection + computerSelection;
     results = "";
-    if (match == "paperrock" || match == "scissorspaper" || match == "rockscissors") {
+    if (match === "paperrock" || match === "scissorspaper" || match === "rockscissors") {
         results = "Player wins!";
-    } else if (match == "rockpaper" || match === "paperscissors" || match == "scissorsrock") {
+    } else if (match === "rockpaper" || match === "paperscissors" || match === "scissorsrock") {
         results = "Player loses!";
     } else {
         results = "Draw!";
     }
     return results;
-     // change to return after testing finished
-}                 //changed to return but not working as intended
-
-//playRound();
+}                 
 
 
-
+//game() finally runs 5 times correctly. Had to pass arguments in playRound() in both functions
 function game() {
    
     for (let i = 0; i < 5; i++) {
@@ -43,9 +39,6 @@ function game() {
         console.log(playerSelection);
         console.log(computerSelection);
         console.log(playRound(playerSelection, computerSelection));
-        
-
-        //console.log(i);
     }
 }
 

@@ -25,7 +25,6 @@ function playRound(playerSelection, computerSelection) {
 
 //game() finally runs 5 times correctly. Had to pass arguments in playRound() in both functions
 function game() {
-   
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt('enter "rock", "paper", or "scissors"').toLowerCase();
         const computerSelection = computerPlay();
